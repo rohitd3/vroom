@@ -1,11 +1,8 @@
 ---
 layout: page
-title: About Me
+title: About Vroom
 permalink: /about/
 ---
 
-This website is powered by **[fastpages](https://github.com/fastai/fastpages)** [^1].
-
-
-
-[^1]:a blogging platform that natively supports Jupyter notebooks in addition to other formats.
+ An easy to use platform to help you make the best automobile purchase possible.
+ Made possible by: @rohitd3, 
