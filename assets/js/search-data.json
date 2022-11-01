@@ -39,7 +39,7 @@
 
   
       ,"page1": {
-          "title": "Find a Model",
+          "title": "",
           "content": "Enter a brand name . Click the button to get car models of that brand. . FIND Make ID Make Model ID Model . &lt;/html&gt; .",
           "url": "https://rohitd3.github.io/vroom/FindModelFromBrand/",
           "relUrl": "/FindModelFromBrand/",
