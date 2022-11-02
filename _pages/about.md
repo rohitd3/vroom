@@ -1,6 +1,5 @@
 ---
-layout: page
-title: About Vroom
+layout: nav
 permalink: /about/
 ---
 
