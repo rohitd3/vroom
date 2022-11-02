@@ -1,10 +1,42 @@
 ---
-layout: default
+layout: nav
 permalink: /LikeDislikeBrands/
 ---
-
+<style>
+table.redTable {
+  border: 1px solid #000000;
+  background-color: #EEEEEE;
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+}
+table.redTable td, table.redTable th {
+  border: 1px solid #AAAAAA;
+  padding: 3px 2px;
+}
+table.redTable tbody td {
+  font-size: 13px;
+}
+table.redTable thead {
+  background: #978C20;
+  background: -moz-linear-gradient(top, #b1a958 0%, #a19736 66%, #978C20 100%);
+  background: -webkit-linear-gradient(top, #b1a958 0%, #a19736 66%, #978C20 100%);
+  background: linear-gradient(to bottom, #b1a958 0%, #a19736 66%, #978C20 100%);
+  border-bottom: 2px solid #444444;
+}
+table.redTable thead th {
+  font-size: 15px;
+  font-weight: bold;
+  color: #ffffffd7;
+  text-align: center;
+  border-left: 2px solid #D0E4F5;
+}
+table.redTable thead th:first-child {
+  border-left: none;
+}
+</style>
 <!-- HTML table fragment for page -->
-<table>
+<table class="redTable">
     <thead>
     <tr>
     <th>Car Brand</th>
