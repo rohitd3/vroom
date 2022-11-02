@@ -51,6 +51,17 @@
   
       ,"page2": {
           "title": "",
+          "content": ". &times;",
+          "url": "https://rohitd3.github.io/vroom/Gallery/",
+          "relUrl": "/Gallery/",
+          "date": ""
+      }
+      
+  
+
+  
+      ,"page3": {
+          "title": "",
           "content": "Car Brand Like Dislike Find Models . &times; Make ID Make Model ID Model .",
           "url": "https://rohitd3.github.io/vroom/LikeDislikeBrands/",
           "relUrl": "/LikeDislikeBrands/",
@@ -60,7 +71,7 @@
   
 
   
-      ,"page3": {
+      ,"page4": {
           "title": "",
           "content": "An easy to use platform to help you make the best automobile purchase possible. Made possible by: @rohitd3, @ad1616, @kkwan0 and @nathanshih04 .",
           "url": "https://rohitd3.github.io/vroom/about/",
@@ -71,7 +82,7 @@
   
 
   
-      ,"page4": {
+      ,"page5": {
           "title": "",
           "content": "&lt;/iframe",
           "url": "https://rohitd3.github.io/vroom/carDealerships/",
@@ -82,7 +93,7 @@
   
 
   
-      ,"page5": {
+      ,"page6": {
           "title": "",
           "content": "Vroom! Find your next car here!! . .",
           "url": "https://rohitd3.github.io/vroom/",
@@ -93,7 +104,7 @@
   
 
   
-      ,"page6": {
+      ,"page7": {
           "title": "",
           "content": "&lt;!DOCTYPE HTML&gt; &lt;!DOCTYPE HTML&gt; . Power to Weight Calculator . Power to Weight ratio . Enter Horsepower of Vehicle Enter Weight of Vehicle Calculate! . Car Power to Weight . .",
           "url": "https://rohitd3.github.io/vroom/powerToWeightCalc/",
@@ -104,7 +115,7 @@
   
 
   
-      ,"page7": {
+      ,"page8": {
           "title": "",
           "content": "&lt;!DOCTYPE HTML&gt; &lt;!DOCTYPE HTML&gt; . Car Range Calculator . Car Range Calculator . Enter MPG(Miles per Gallon) Enter Fuel Tank Max Capacity &lt;button onclick-&quot;calc()&quot;&gt;Calculate!&lt;/button&gt; . Car Range . .",
           "url": "https://rohitd3.github.io/vroom/rangeCalc/",
@@ -134,7 +145,7 @@
   
 
   
-      ,"page15": {
+      ,"page16": {
           "title": "",
           "content": "Sitemap: {{ “sitemap.xml” | absolute_url }} | .",
           "url": "https://rohitd3.github.io/vroom/robots.txt",
