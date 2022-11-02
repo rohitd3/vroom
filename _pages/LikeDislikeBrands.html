@@ -145,7 +145,7 @@ table.blueTable tfoot .links a{
 <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 <div>
   <input type="text" id="findInput" value="honda"/>
-  <button onclick="Find();">Find Next</button>
+  <button onclick="Find();">Find</button>
 </div>
 <!-- HTML table fragment for page -->
 <div id="main">
@@ -411,14 +411,28 @@ table.blueTable tfoot .links a{
     var last = "";
 
     function Find() {
-    $( "div:contains(" + last + ")" ).css( "text-decoration", "none" );
-    let value = document.getElementById("findInput").value;
-      value = "\'" + value + "\'"
-      console.log(value);
-      last = value;
+      // $( "div:contains(" + last + ")" ).css( "text-decoration", "none" );
+      // let value = document.getElementById("findInput").value;
+      // value = "\'" + value + "\'"
+      // console.log(value);
+      // last = value;
 
-      $( "div:contains(" + value + ")" ).css( "text-decoration", "underline" );
-      
+      // $( "div:contains(" + value + ")" ).css( "text-decoration", "underline" );
+      var str = document.getElementById ("findInput").value;
+            if (str == "") {
+                alert ("Please enter some text to search!");
+                return;
+            }
+            
+            if (window.find) {        // Firefox, Google Chrome, Safari
+                var found = window.find (str);
+                if (!found) {
+                    alert ("The following text was not found:\n" + str);
+                }
+            }
+            else {
+                alert ("Your browser does not support this example!");
+            }
     }
 
 </script>
