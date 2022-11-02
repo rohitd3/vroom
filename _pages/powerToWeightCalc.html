@@ -1,3 +1,7 @@
+---
+layout: nav
+permalink: /powerToWeightCalc/
+---
 <!DOCTYPE HTML>
 <!DOCTYPE HTML>
 <html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
@@ -17,26 +21,22 @@
     <div class="text-center"> 
         <div class="px-4 py-5 my-5">
             <h3 class="display-5 fw-bold">Power to Weight ratio</h3>
-        
-            <form action="/powertoweight" method="GET" id="powertoweightForm">
-                <div>
-                    <label for="horswepowerField">Enter Horsepower of Vehicle</label>
-                    <input name="horsepower" id="horsepowerField">
-                </div>
+    
+            <div>
+                <label for="horsepowerField">Enter Horsepower of Vehicle</label>
+                <input name="horsepower" id="horsepowerField">
+            </div>
+            <br>
+            <div>
+                <label for="weightField">Enter Weight of Vehicle</label>
+                <input name="weight" id="weightField">
+            </div>
+            <br>
+            <div>
+                <button onclick="calc()">Calculate!</button>
                 <br>
-                <div>
-                    <label for="weightField">Enter Weight of Vehicle</label>
-                    <input name="weight" id="weightField">
-                </div>
-                <br>
-                <div>
-                    <button>Calculate!</button>
-                    <br>
-                    <p th:text="'Horsepower is, ' + ${horsepower} "></p>
-                    <p th:text="'Weight is, ' + ${weight} "></p>
 
-                </div>
-            </form>
+            </div>
             <h4 id="result"> </h4>
 
             <table id="table" class="text-center"> 
@@ -50,9 +50,38 @@
     </div>
 
 
-    <script th:inline="javascript">
-        var horsepower = /*[[${horsepower}]]*/ "";
-        var weight = /*[[${weight}]]*/ "";
+    <script>
+        var horsepower = 0;
+        var weight = 0;
+        function calc() {
+            horsepower = parseInt(document.getElementById("horsepowerField").innerHTML);
+            weight =  parseInt(document.getElementById("weightField").innerHTML);
+
+            var ratio = horsepower * 1.0 / weight;
+            const resultContainer = document.getElementById("result");
+            const tableContainer = document.getElementById("table");
+            resultContainer.innerHTML = "Your car's power to weight ratio is " + ratio + " horsepower per pound. ";
+
+            const data = [
+                ["Toyota Prius", 0.0402], ["Tesla Model X", 0.1292], ["Honda Odyssey", 0.0625]
+            ];
+            for (const row of data) {
+                // tr for each row
+                const tr = document.createElement("tr");
+                // td for each column
+                const car = document.createElement("td");
+                const powerToWeight = document.createElement("td");
+                // data is specific to the API
+                car.innerHTML = row[0];
+                powerToWeight.innerHTML = row[1]; 
+                // this build td's into tr
+                tr.appendChild(car);
+                tr.appendChild(powerToWeight);
+                // add HTML to container
+                tableContainer.appendChild(tr);
+            }
+        }
+
         var ratio = horsepower * 1.0 / weight;
         const resultContainer = document.getElementById("result");
         const tableContainer = document.getElementById("table");
@@ -77,10 +106,6 @@
             tableContainer.appendChild(tr);
         }
     </script>
-
-
-
-
 
 </body>
 
