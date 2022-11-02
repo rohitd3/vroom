@@ -81,7 +81,7 @@ li a:hover:not(.active) {
             </div>
             <br>
             <div>
-                <button onclick="read()">Calculate!</button>
+                <button onclick="calc()">Calculate!</button>
                 <br>
 
             </div>
@@ -101,9 +101,33 @@ li a:hover:not(.active) {
     <script>
         var horsepower = 0;
         var weight = 0;
-        function read() {
+        function calc() {
             horsepower = parseInt(document.getElementById("horsepowerField").innerHTML);
             weight =  parseInt(document.getElementById("weightField").innerHTML);
+
+            var ratio = horsepower * 1.0 / weight;
+            const resultContainer = document.getElementById("result");
+            const tableContainer = document.getElementById("table");
+            resultContainer.innerHTML = "Your car's power to weight ratio is " + ratio + " horsepower per pound. ";
+
+            const data = [
+                ["Toyota Prius", 0.0402], ["Tesla Model X", 0.1292], ["Honda Odyssey", 0.0625]
+            ];
+            for (const row of data) {
+                // tr for each row
+                const tr = document.createElement("tr");
+                // td for each column
+                const car = document.createElement("td");
+                const powerToWeight = document.createElement("td");
+                // data is specific to the API
+                car.innerHTML = row[0];
+                powerToWeight.innerHTML = row[1]; 
+                // this build td's into tr
+                tr.appendChild(car);
+                tr.appendChild(powerToWeight);
+                // add HTML to container
+                tableContainer.appendChild(tr);
+            }
         }
 
         var ratio = horsepower * 1.0 / weight;
