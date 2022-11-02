@@ -50,6 +50,17 @@
 
   
       ,"page2": {
+          "title": "",
+          "content": "Car Brand Like Dislike .",
+          "url": "https://rohitd3.github.io/vroom/LikeDislikeBrands/",
+          "relUrl": "/LikeDislikeBrands/",
+          "date": ""
+      }
+      
+  
+
+  
+      ,"page3": {
           "title": "About Vroom",
           "content": "An easy to use platform to help you make the best automobile purchase possible. Made possible by: @rohitd3, @ad1616, @kkwan0 and @nathanshih04 .",
           "url": "https://rohitd3.github.io/vroom/about/",
@@ -60,7 +71,7 @@
   
 
   
-      ,"page3": {
+      ,"page4": {
           "title": "",
           "content": "",
           "url": "https://rohitd3.github.io/vroom/",
@@ -90,7 +101,7 @@
   
 
   
-      ,"page11": {
+      ,"page12": {
           "title": "",
           "content": "Sitemap: {{ “sitemap.xml” | absolute_url }} | .",
           "url": "https://rohitd3.github.io/vroom/robots.txt",
