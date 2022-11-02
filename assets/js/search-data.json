@@ -73,7 +73,18 @@
   
       ,"page4": {
           "title": "",
-          "content": "",
+          "content": "&lt;/iframe",
+          "url": "https://rohitd3.github.io/vroom/carDealerships/",
+          "relUrl": "/carDealerships/",
+          "date": ""
+      }
+      
+  
+
+  
+      ,"page5": {
+          "title": "",
+          "content": "Vroom! Find your next car here!! . .",
           "url": "https://rohitd3.github.io/vroom/",
           "relUrl": "/",
           "date": ""
@@ -82,7 +93,7 @@
   
 
   
-      ,"page5": {
+      ,"page6": {
           "title": "",
           "content": "&lt;!DOCTYPE HTML&gt; &lt;!DOCTYPE HTML&gt; . Power to Weight Calculator . Power to Weight ratio . Enter Horsepower of Vehicle Enter Weight of Vehicle Calculate! . Car Power to Weight . .",
           "url": "https://rohitd3.github.io/vroom/powerToWeightCalc/",
@@ -93,7 +104,7 @@
   
 
   
-      ,"page6": {
+      ,"page7": {
           "title": "",
           "content": "&lt;!DOCTYPE HTML&gt; &lt;!DOCTYPE HTML&gt; . Car Range Calculator . Car Range Calculator . Enter MPG(Miles per Gallon) Enter Fuel Tank Max Capacity Calculate! . . . Car Range . .",
           "url": "https://rohitd3.github.io/vroom/rangeCalc/",
@@ -123,7 +134,7 @@
   
 
   
-      ,"page14": {
+      ,"page15": {
           "title": "",
           "content": "Sitemap: {{ “sitemap.xml” | absolute_url }} | .",
           "url": "https://rohitd3.github.io/vroom/robots.txt",
