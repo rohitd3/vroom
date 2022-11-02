@@ -93,7 +93,6 @@ table.redTable thead th:first-child {
         }
         // valid response will have JSON data
         response.json().then(data => {
-            console.log(data);
             for (const row of data) {
             // make "tr element" for each "row of data"
             const tr = document.createElement("tr");
@@ -182,6 +181,7 @@ table.redTable thead th:first-child {
         var url = "https://vpic.nhtsa.dot.gov/api/vehicles/getmodelsformake/";
         var format = "?format=json";
         var apiCall = url + brand + format;
+        console.log(apiCall);
 
         const options = {
         method: 'GET', // *GET, POST, PUT, DELETE, etc.
@@ -203,7 +203,6 @@ table.redTable thead th:first-child {
                         const td = document.createElement("td");
                         td.innerHTML = errorMsg;
                         tr.appendChild(td);
-                        resultContainer.appendChild(tr);
                         return;
                     }
                 // valid response will have json data
@@ -235,7 +234,6 @@ table.redTable thead th:first-child {
                     
 
                         // add HTML to container
-                        resultContainer.appendChild(tr);
                     }
                 })
             })
@@ -247,7 +245,6 @@ table.redTable thead th:first-child {
                 const td = document.createElement("td");
                 td.innerHTML = err;
                 tr.appendChild(td);
-                resultContainer.appendChild(tr);
             });
 
 
