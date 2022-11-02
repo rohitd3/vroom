@@ -17,26 +17,23 @@
     <div class="text-center"> 
         <div class="px-4 py-5 my-5">
             <h3 class="display-5 fw-bold">Power to Weight ratio</h3>
-        
-            <form action="/powertoweight" method="GET" id="powertoweightForm">
-                <div>
-                    <label for="horswepowerField">Enter Horsepower of Vehicle</label>
-                    <input name="horsepower" id="horsepowerField">
-                </div>
+    
+            <div>
+                <label for="horswepowerField">Enter Horsepower of Vehicle</label>
+                <input name="horsepower" id="horsepowerField">
+            </div>
+            <br>
+            <div>
+                <label for="weightField">Enter Weight of Vehicle</label>
+                <input name="weight" id="weightField">
+                <button onclick="read()">Submit</button>
+            </div>
+            <br>
+            <div>
+                <button>Calculate!</button>
                 <br>
-                <div>
-                    <label for="weightField">Enter Weight of Vehicle</label>
-                    <input name="weight" id="weightField">
-                </div>
-                <br>
-                <div>
-                    <button>Calculate!</button>
-                    <br>
-                    <p th:text="'Horsepower is, ' + ${horsepower} "></p>
-                    <p th:text="'Weight is, ' + ${weight} "></p>
 
-                </div>
-            </form>
+            </div>
             <h4 id="result"> </h4>
 
             <table id="table" class="text-center"> 
@@ -50,9 +47,14 @@
     </div>
 
 
-    <script th:inline="javascript">
-        var horsepower = /*[[${horsepower}]]*/ "";
-        var weight = /*[[${weight}]]*/ "";
+    <script>
+        var horsepower = 0;
+        var weight = 0;
+        function read() {
+            horsepower = parseInt(document.getElementById("horsepowerField").innerHTML);
+            weight =  parseInt(document.getElementById("weightField").innerHTML);
+        }
+
         var ratio = horsepower * 1.0 / weight;
         const resultContainer = document.getElementById("result");
         const tableContainer = document.getElementById("table");
@@ -77,10 +79,6 @@
             tableContainer.appendChild(tr);
         }
     </script>
-
-
-
-
 
 </body>
 
