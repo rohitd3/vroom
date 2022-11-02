@@ -91,10 +91,15 @@ permalink: /LikeDislikeBrands/
                 };
                 boohoo.appendChild(boohoo_but);  // add "boohoo button" to boohoo cell
             
+            const findCars = document.createElement("td");
+                const findCars_but = document.creaeElement('button');
+                findCars.appendChild(findCars_but);
+
             // this builds ALL td's (cells) into tr (row) element
             tr.appendChild(brand);
             tr.appendChild(haha);
             tr.appendChild(boohoo);
+            tr.appendChild(findCars);
 
             // this adds all the tr (row) work above to the HTML "result" container
             resultContainer.appendChild(tr);
