@@ -82,6 +82,28 @@
   
 
   
+      ,"page5": {
+          "title": "",
+          "content": "&lt;!DOCTYPE HTML&gt; &lt;!DOCTYPE HTML&gt; . Power to Weight Calculator . Power to Weight ratio . Enter Horsepower of Vehicle Enter Weight of Vehicle Submit Calculate! . Car Power to Weight . .",
+          "url": "https://rohitd3.github.io/vroom/powerToWeightCalc/",
+          "relUrl": "/powerToWeightCalc/",
+          "date": ""
+      }
+      
+  
+
+  
+      ,"page6": {
+          "title": "",
+          "content": "&lt;!DOCTYPE HTML&gt; &lt;!DOCTYPE HTML&gt; . Car Range Calculator . Car Range Calculator . Enter MPG(Miles per Gallon) Enter Fuel Tank Max Capacity Calculate! . . . Car Range . .",
+          "url": "https://rohitd3.github.io/vroom/rangeCalc/",
+          "relUrl": "/rangeCalc/",
+          "date": ""
+      }
+      
+  
+
+  
   
 
   
@@ -101,7 +123,7 @@
   
 
   
-      ,"page12": {
+      ,"page14": {
           "title": "",
           "content": "Sitemap: {{ “sitemap.xml” | absolute_url }} | .",
           "url": "https://rohitd3.github.io/vroom/robots.txt",
