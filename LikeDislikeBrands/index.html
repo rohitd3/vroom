@@ -294,7 +294,8 @@ body {
     }
 
     function find(brand) {
-        document.getElementById("mySidenav").style.width = "250px";
+        container2.innerHTML = "";
+        document.getElementById("mySidenav").style.width = "500px";
         document.getElementById("main").style.marginLeft = "250px";
         document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
         var url = "https://vpic.nhtsa.dot.gov/api/vehicles/getmodelsformake/";
