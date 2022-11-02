@@ -107,8 +107,8 @@ li a:hover:not(.active) {
         var horsepower = 0;
         var weight = 0;
         function calc() {
-            horsepower = parseInt(document.getElementById("horsepowerField").innerHTML);
-            weight =  parseInt(document.getElementById("weightField").innerHTML);
+            horsepower = parseInt(document.getElementById("horsepowerField").value);
+            weight =  parseInt(document.getElementById("weightField").value);
 
             var ratio = horsepower * 1.0 / weight;
             const resultContainer = document.getElementById("result");

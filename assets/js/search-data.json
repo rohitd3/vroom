@@ -106,7 +106,7 @@
   
       ,"page7": {
           "title": "",
-          "content": "&lt;!DOCTYPE HTML&gt; &lt;!DOCTYPE HTML&gt; . Car Range Calculator . Car Range Calculator . Enter MPG(Miles per Gallon) Enter Fuel Tank Max Capacity Calculate! . . . Car Range . .",
+          "content": "&lt;!DOCTYPE HTML&gt; &lt;!DOCTYPE HTML&gt; . Car Range Calculator . Car Range Calculator . Enter MPG(Miles per Gallon) Enter Fuel Tank Max Capacity &lt;button onclick-&quot;calc()&quot;&gt;Calculate!&lt;/button&gt; . Car Range . .",
           "url": "https://rohitd3.github.io/vroom/rangeCalc/",
           "relUrl": "/rangeCalc/",
           "date": ""
