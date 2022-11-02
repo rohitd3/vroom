@@ -102,10 +102,19 @@ body {
 
 <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <a href="#">About</a>
-    <a href="#">Services</a>
-    <a href="#">Clients</a>
-    <a href="#">Contact</a>
+    <table id="table" class="redTable">
+        <thead>
+        <tr>
+            <th>Make ID</th>
+            <th>Make</th>
+            <th>Model ID</th>
+            <th>Model</th>
+        </tr>
+        </thead>
+        <tbody id="demo">
+            <!-- generated rows -->
+        </tbody>
+    </table>
 </div>
 
 <!-- Script is layed out in a sequence (without a function) and will execute when page is loaded -->
@@ -114,6 +123,7 @@ body {
     console.log(ip);
     // prepare HTML defined "result" container for new output
     const resultContainer = document.getElementById("result");
+    const container2 = document.getElementById("demo");
 
     // keys for joke reactions
     const HAHA = "like";
@@ -264,6 +274,7 @@ body {
                         const td = document.createElement("td");
                         td.innerHTML = errorMsg;
                         tr.appendChild(td);
+                        container2.appendChild(tr);
                         return;
                     }
                 // valid response will have json data
@@ -295,6 +306,7 @@ body {
                     
 
                         // add HTML to container
+                        container2.appendChild(tr);
                     }
                 })
             })
@@ -306,6 +318,7 @@ body {
                 const td = document.createElement("td");
                 td.innerHTML = err;
                 tr.appendChild(td);
+                container2.appendChild(tr);
             });
 
 
