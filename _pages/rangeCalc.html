@@ -4,8 +4,6 @@ permalink: /rangeCalc/
 ---
 <!DOCTYPE HTML>
 <!DOCTYPE HTML>
-<html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
-      layout:decorate="~{layouts/base}" lang="en">
 
 <head>
   <title>Car Range Calculator</title>
@@ -63,7 +61,7 @@ permalink: /rangeCalc/
             resultContainer.innerHTML = "Your car's power to weight ratio is " + ratio + " horsepower per pound. ";
 
             const data = [
-                ["Toyota Prius", 640], ["Tesla Model X", 348], ["Honda Odyssey", 370.5],["Mercedez Benz C Class", 469], ["Audi A5", 351]
+                ["Toyota Prius", 640], ["Tesla Model X", 348], ["Honda Odyssey", 370.5]
             ];
             for (const row of data) {
                 // tr for each row
@@ -88,7 +86,7 @@ permalink: /rangeCalc/
         resultContainer.innerHTML = "Your car's range is " + range + " miles. ";
 
         const data = [
-                ["Toyota Prius", 640], ["Tesla Model X", 348], ["Honda Odyssey", 370.5], ["Mercedez Benz C Class", 469], ["Audi A5", 351]
+                ["Toyota Prius", 640], ["Tesla Model X", 348], ["Honda Odyssey", 370.5]
             ];
         for (const row of data) {
             // tr for each row
