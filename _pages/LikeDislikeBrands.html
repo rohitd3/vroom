@@ -449,9 +449,11 @@ table.blueTable tfoot .links a{
           .includes(search_query.toLowerCase())) {
             // ...remove the `.is-hidden` class.
             cards[i].classList.remove("hidden");
+            cards[i].style.display = "block";
         } else {
           // Otherwise, add the class.
           cards[i].classList.add("hidden");
+          cards[i].style.display = "none";
         }
       }
     }
