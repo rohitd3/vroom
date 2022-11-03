@@ -51,7 +51,7 @@
   
       ,"page2": {
           "title": "",
-          "content": "Photo Gallery . click on the image to expand, and click on the brand to search for that brand. . . &times;",
+          "content": "Photo Gallery . click on the image to expand, and click on the brand to search for that brand. . . &times; &lt;img src=&quot;/vroom/images/gallry/civi.jpg&quot; style=&quot;float:right;&quot;alt=&quot;Honda&quot; onclick=&quot;myFunction(this);&quot;&gt;",
           "url": "https://rohitd3.github.io/vroom/Gallery/",
           "relUrl": "/Gallery/",
           "date": ""
