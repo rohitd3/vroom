@@ -20,8 +20,8 @@ permalink: /rangeCalc/
 <body>
     <div class="text-center"> 
         <div class="px-4 py-5 my-5">
-            <h3 class="display-5 fw-bold">Car Range Calculator</h3>
-        
+            <h3 class="display-5 fw-bold">Range</h3>
+
             <div>
                 <label for="mpgField">Enter MPG(Miles per Gallon)</label>
                 <input name="mpg" id="mpgField">
@@ -33,13 +33,13 @@ permalink: /rangeCalc/
             </div>
             <br>
             <div>
-                <button onclick- "calc()">Calculate!</button>
+                <button onclick="calc()">Calculate!</button>
                 <br>
-                
+
             </div>
             <h4 id="result"> </h4>
 
-            <table id="table" class="center" style="border:1px solid black;margin-left:auto;margin-right:auto;"> 
+            <table id="table" class="text-center"> 
                 <tr>    
                     <th>Car</th>
                     <th>Range</th>
@@ -51,22 +51,17 @@ permalink: /rangeCalc/
 
 
     <script>
-        // Notation to get the Thymeleaf variables
-        
         var mpg = 0;
-        var tank = 0;
+        var tankSize = 0;
+        function calc() {
+            mpg = parseInt(document.getElementById("horsepowerField").value);
+            tankSize =  parseInt(document.getElementById("weightField").value);
 
-        // Calculating the range and changing the DOM to display it
-        function calc(){
-            mpg = parseInt(document.getElementByID("mpgField").value);
-            tank = parseInt(document.getElementByID("tankField").value);
-            
-            var range = mpg * tank;
+            var range = mpg * tankSize;
             const resultContainer = document.getElementById("result");
             const tableContainer = document.getElementById("table");
-            resultContainer.innerHTML = "Your car's max range is " + range + " miles. ";
-            
-            // Eventually, this data will be in JSON key:value format from an API
+            resultContainer.innerHTML = "Your car's power to weight ratio is " + ratio + " horsepower per pound. ";
+
             const data = [
                 ["Toyota Prius", 640], ["Tesla Model X", 348], ["Honda Odyssey", 370.5],
                 ["Mercedez Benz C Class", 469], ["Audi A5", 351]
@@ -76,23 +71,46 @@ permalink: /rangeCalc/
                 const tr = document.createElement("tr");
                 // td for each column
                 const car = document.createElement("td");
-                const range = document.createElement("td");
+                const powerToWeight = document.createElement("td");
                 // data is specific to the API
                 car.innerHTML = row[0];
-                range.innerHTML = row[1]; 
+                powerToWeight.innerHTML = row[1]; 
                 // this build td's into tr
                 tr.appendChild(car);
-                tr.appendChild(range);
+                tr.appendChild(powerToWeight);
                 // add HTML to container
                 tableContainer.appendChild(tr);
             }
         }
+
+        var range = mpg * tank;
+        const resultContainer = document.getElementById("result");
+        const tableContainer = document.getElementById("table");
+        resultContainer.innerHTML = "Your car's range is " + range + " miles. ";
+
+        const data = [
+                ["Toyota Prius", 640], ["Tesla Model X", 348], ["Honda Odyssey", 370.5],
+                ["Mercedez Benz C Class", 469], ["Audi A5", 351]
+            ];
+        for (const row of data) {
+            // tr for each row
+            const tr = document.createElement("tr");
+            // td for each column
+            const car = document.createElement("td");
+            const range = document.createElement("td");
+            // data is specific to the API
+            car.innerHTML = row[0];
+            range.innerHTML = row[1]; 
+            // this build td's into tr
+            tr.appendChild(car);
+            tr.appendChild(range);
+            // add HTML to container
+            tableContainer.appendChild(tr);
+        }
     </script>
-
-
-
 
 </body>
 
 
 </html>
+
