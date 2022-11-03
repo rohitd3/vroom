@@ -109,8 +109,8 @@ li a:hover:not(.active) {
         var mpg = 0;
         var tankSize = 0;
         function calc() {
-            mpg = parseInt(document.getElementById("horsepowerField").value);
-            tankSize =  parseInt(document.getElementById("weightField").value);
+            mpg = parseInt(document.getElementById("mpgField").value);
+            tankSize =  parseInt(document.getElementById("tankField").value);
 
             var range = mpg * tankSize;
             const resultContainer = document.getElementById("result");
@@ -118,8 +118,7 @@ li a:hover:not(.active) {
             resultContainer.innerHTML = "Your car's power to weight ratio is " + ratio + " horsepower per pound. ";
 
             const data = [
-                ["Toyota Prius", 640], ["Tesla Model X", 348], ["Honda Odyssey", 370.5],
-                ["Mercedez Benz C Class", 469], ["Audi A5", 351]
+                ["Toyota Prius", 640], ["Tesla Model X", 348], ["Honda Odyssey", 370.5],["Mercedez Benz C Class", 469], ["Audi A5", 351]
             ];
             for (const row of data) {
                 // tr for each row
@@ -144,8 +143,7 @@ li a:hover:not(.active) {
         resultContainer.innerHTML = "Your car's range is " + range + " miles. ";
 
         const data = [
-                ["Toyota Prius", 640], ["Tesla Model X", 348], ["Honda Odyssey", 370.5],
-                ["Mercedez Benz C Class", 469], ["Audi A5", 351]
+                ["Toyota Prius", 640], ["Tesla Model X", 348], ["Honda Odyssey", 370.5], ["Mercedez Benz C Class", 469], ["Audi A5", 351]
             ];
         for (const row of data) {
             // tr for each row
