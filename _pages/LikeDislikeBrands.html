@@ -141,12 +141,32 @@ table.blueTable tfoot .links a{
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: rgb(160, 0, 0);
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: #555;
+}
 </style>
 <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 <!-- <div>
   <input type="text" id="findInput" value="honda"/>
   <button onclick="liveSearch();">Find</button>
 </div> -->
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 <!-- HTML table fragment for page -->
 <div id="main">
 <table class="redTable">
@@ -456,6 +476,23 @@ table.blueTable tfoot .links a{
           cards[i].style.display = "none";
         }
       }
+    }
+
+    let mybutton = document.getElementById("myBtn");
+
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
     }
 
 </script>
