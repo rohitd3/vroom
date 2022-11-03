@@ -3,7 +3,6 @@ layout: nav
 permalink: /rangeCalc/
 ---
 <!DOCTYPE HTML>
-<!DOCTYPE HTML>
 
 <head>
   <title>Car Range Calculator</title>
@@ -56,6 +55,7 @@ permalink: /rangeCalc/
             tankSize =  parseInt(document.getElementById("tankField").value);
 
             var range = mpg * tankSize;
+            console.log(range);
             const resultContainer = document.getElementById("result");
             const tableContainer = document.getElementById("table");
             resultContainer.innerHTML = "Your car's power to weight ratio is " + ratio + " horsepower per pound. ";
