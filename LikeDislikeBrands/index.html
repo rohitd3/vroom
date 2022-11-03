@@ -198,7 +198,7 @@ table.blueTable tfoot .links a{
 <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 <div>
   <input type="text" id="findInput" value="honda"/>
-  <button onclick="Find();">Find</button>
+  <button onclick="liveSearch();">Find</button>
 </div>
 <!-- HTML table fragment for page -->
 <div id="main">
@@ -320,7 +320,8 @@ table.blueTable tfoot .links a{
             tr.appendChild(haha);
             tr.appendChild(boohoo);
             tr.appendChild(findCars);
-
+            
+            tr.className = "dataRow";
             // this adds all the tr (row) work above to the HTML "result" container
             resultContainer.appendChild(tr);
             }
@@ -399,8 +400,6 @@ table.blueTable tfoot .links a{
                 response.json().then(data => {
                     // Country data
                     for (const row of data["Results"]) {
-                        console.log(row);
-
                         // tr for each row
                         const tr = document.createElement("tr");
                         // td for each column
@@ -486,6 +485,28 @@ table.blueTable tfoot .links a{
             else {
                 alert ("Your browser does not support this example!");
             }
+    }
+
+
+
+    function liveSearch() {
+      // Locate the card elements
+      let cards = document.querySelectorAll('.dataRow')
+      // Locate the search input
+      let search_query = document.getElementById("findInput").value;
+      // Loop through the cards
+      for (var i = 0; i < cards.length; i++) {
+        // If the text is within the card...
+        if(cards[i].innerText.toLowerCase()
+          // ...and the text matches the search query...
+          .includes(search_query.toLowerCase())) {
+            // ...remove the `.is-hidden` class.
+            cards[i].classList.remove("is-hidden");
+        } else {
+          // Otherwise, add the class.
+          cards[i].classList.add("is-hidden");
+        }
+      }
     }
 
 </script>
