@@ -142,6 +142,11 @@ table.blueTable tfoot .links a{
   .sidenav a {font-size: 18px;}
 }
 </style>
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+<!-- <div>
+  <input type="text" id="findInput" value="honda"/>
+  <button onclick="liveSearch();">Find</button>
+</div> -->
 <!-- HTML table fragment for page -->
 <div id="main">
 <table class="redTable">
@@ -262,7 +267,8 @@ table.blueTable tfoot .links a{
             tr.appendChild(haha);
             tr.appendChild(boohoo);
             tr.appendChild(findCars);
-
+            
+            tr.className = "dataRow";
             // this adds all the tr (row) work above to the HTML "result" container
             resultContainer.appendChild(tr);
             }
@@ -341,8 +347,6 @@ table.blueTable tfoot .links a{
                 response.json().then(data => {
                     // Country data
                     for (const row of data["Results"]) {
-                        console.log(row);
-
                         // tr for each row
                         const tr = document.createElement("tr");
                         // td for each column
@@ -400,6 +404,58 @@ table.blueTable tfoot .links a{
         document.getElementById("mySidenav").style.width = "0";
         document.getElementById("main").style.marginLeft= "0";
         document.body.style.backgroundColor = "white";
+    }
+
+
+    var last = "";
+
+    function Find() {
+      // $( "div:contains(" + last + ")" ).css( "text-decoration", "none" );
+      // let value = document.getElementById("findInput").value;
+      // value = "\'" + value + "\'"
+      // console.log(value);
+      // last = value;
+
+      // $( "div:contains(" + value + ")" ).css( "text-decoration", "underline" );
+      var str = document.getElementById ("findInput").value;
+            if (str == "") {
+                alert ("Please enter some text to search!");
+                return;
+            }
+            
+            if (window.find) {        // Firefox, Google Chrome, Safari
+                var found = window.find (str);
+                if (!found) {
+                    alert ("The following text was not found:\n" + str);
+                }
+            }
+            else {
+                alert ("Your browser does not support this example!");
+            }
+    }
+
+
+
+    function liveSearch() {
+      // Locate the card elements
+      let cards = document.querySelectorAll('.dataRow')
+      // Locate the search input
+      let search_query = document.getElementById("findInput").value;
+      // Loop through the cards
+      for (var i = 0; i < cards.length; i++) {
+        // If the text is within the card...
+        if(cards[i].innerText.toLowerCase()
+          // ...and the text matches the search query...
+          .includes(search_query.toLowerCase())) {
+            // ...remove the `.is-hidden` class.
+            cards[i].classList.remove("hidden");
+            cards[i].style.display = "block";
+        } else {
+          // Otherwise, add the class.
+          cards[i].classList.add("hidden");
+          cards[i].style.display = "none";
+        }
+      }
     }
 
 </script>
