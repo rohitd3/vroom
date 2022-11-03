@@ -141,12 +141,32 @@ table.blueTable tfoot .links a{
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: rgb(160, 0, 0);
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: #555;
+}
 </style>
 <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 <!-- <div>
   <input type="text" id="findInput" value="honda"/>
   <button onclick="liveSearch();">Find</button>
 </div> -->
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 <!-- HTML table fragment for page -->
 <div id="main">
 <table class="redTable">
@@ -181,20 +201,18 @@ table.blueTable tfoot .links a{
     </table>
 </div>
 
-<!-- Script is layed out in a sequence (without a function) and will execute when page is loaded -->
 <script>
     var ip = location.host;
     console.log(ip);
-    // prepare HTML defined "result" container for new output
+    // prepare HTML defined "result" container and "demo" container for new output
     const resultContainer = document.getElementById("result");
     const container2 = document.getElementById("demo");
 
-    // keys for joke reactions
+    // keys for brand like and dislike
     const HAHA = "like";
     const BOOHOO = "dislike";
 
-    // prepare fetch urls
-    // const url = "https://flask.nighthawkcodingsociety.com/api/jokes";
+    // prepare fetch urls and API calls
     const url = "https://" + "breadbops.gq" + "/api/topBrands";
     const get_url = url +"/";
     const like_url = url + "/like/";  // haha reaction
@@ -202,58 +220,53 @@ table.blueTable tfoot .links a{
 
     // prepare fetch GET options
     const options = {
-    method: 'GET', // *GET, POST, PUT, DELETE, etc.
-    mode: 'cors', // no-cors, *cors, same-origin
-    cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
-    credentials: 'same-origin', // include, same-origin, omit
+    method: 'GET', 
+    mode: 'cors', 
+    cache: 'default', 
+    credentials: 'same-origin', 
     headers: {
         'Content-Type': 'application/json'
-        // 'Content-Type': 'application/x-www-form-urlencoded',
+        
     },
     };
-    // prepare fetch PUT options, clones with JS Spread Operator (...)
-    const put_options = {...options, method: 'PUT'}; // clones and replaces method
+    const put_options = {...options, method: 'PUT'}; 
 
     // fetch the API
     fetch(get_url, options)
-    // response is a RESTful "promise" on any successful fetch
     .then(response => {
         // check for response errors
         if (response.status !== 200) {
             error('GET API response failure: ' + response.status);
             return;
         }
-        // valid response will have JSON data
         response.json().then(data => {
             for (const row of data) {
             // make "tr element" for each "row of data"
             const tr = document.createElement("tr");
             
-            // td for joke cell
+            // td for brand cell
             const brand = document.createElement("td");
-                brand.innerHTML = row.id + ". " + row.brand;  // add fetched data to innerHTML
+                brand.innerHTML = row.id + ". " + row.brand;  
 
-            // td for haha cell with onclick actions
+            // td for like cell 
             const haha = document.createElement("td");
                 const haha_but = document.createElement('button');
-                haha_but.id = HAHA+row.id   // establishes a HAHA JS id for cell
-                haha_but.innerHTML = row.like;  // add fetched "haha count" to innerHTML
+                haha_but.id = HAHA+row.id   
+                haha_but.innerHTML = row.like;  
                 haha_but.onclick = function () {
-                // onclick function call with "like parameters"
                 reaction(HAHA, like_url+row.id, haha_but.id);  
                 };
-                haha.appendChild(haha_but);  // add "haha button" to haha cell
+                haha.appendChild(haha_but); 
 
-            // td for boohoo cell with onclick actions
+            // td for dislike cell 
             const boohoo = document.createElement("td");
                 const boohoo_but = document.createElement('button');
-                boohoo_but.id = BOOHOO+row.id  // establishes a BOOHOO JS id for cell
-                boohoo_but.innerHTML = row.dislike;  // add fetched "boohoo count" to innerHTML
+                boohoo_but.id = BOOHOO+row.id  
+                boohoo_but.innerHTML = row.dislike;  
                 boohoo_but.onclick = function () {
-                // onclick function call with "jeer parameters"
                 reaction(BOOHOO, jeer_url+row.id, boohoo_but.id);  
                 };
-                boohoo.appendChild(boohoo_but);  // add "boohoo button" to boohoo cell
+                boohoo.appendChild(boohoo_but);  
             
             const findCars = document.createElement("td");
                 const findCars_but = document.createElement('button');
@@ -279,28 +292,24 @@ table.blueTable tfoot .links a{
     error(err + " " + get_url);
     });
 
-    // Reaction function to likes or jeers user actions
+    // Function to PUT data 
     function reaction(type, put_url, elemID) {
     console.log(put_url);
     // fetch the API
     fetch(put_url, put_options)
-    // response is a RESTful "promise" on any successful fetch
     .then(response => {
-        // check for response errors
         if (response.status !== 200) {
             error("PUT API response failure: " + response.status)
             return;  // api failure
         }
-        // valid response will have JSON data
         response.json().then(data => {
             console.log(data);
-            // Likes or Jeers updated/incremented
-            if (type === HAHA) // like data element
-            document.getElementById(elemID).innerHTML = data.like;  // fetched haha data assigned to haha Document Object Model (DOM)
-            else if (type === BOOHOO) // jeer data element
-            document.getElementById(elemID).innerHTML = data.dislike;  // fetched boohoo data assigned to boohoo Document Object Model (DOM)
+            if (type === HAHA) 
+            document.getElementById(elemID).innerHTML = data.like;  
+            else if (type === BOOHOO) 
+            document.getElementById(elemID).innerHTML = data.dislike; 
             else
-            error("unknown type: " + type);  // should never occur
+            error("unknown type: " + type); 
         })
     })
     // catch fetch errors (ie Nginx ACCESS to server blocked)
@@ -310,27 +319,31 @@ table.blueTable tfoot .links a{
     
     }
 
+    // Function to display all of the models of a car from a brand
     function find(brand) {
+        // Setting sidebar size and getting element
         container2.innerHTML = "";
         document.getElementById("mySidenav").style.width = "500px";
         document.getElementById("main").style.marginLeft = "250px";
         document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+        // API Url
         var url = "https://vpic.nhtsa.dot.gov/api/vehicles/getmodelsformake/";
         var format = "?format=json";
+        // Creating call to API using the brand to get models for that brand
         var apiCall = url + brand + format;
         console.log(apiCall);
 
         const options = {
-        method: 'GET', // *GET, POST, PUT, DELETE, etc.
-        mode: 'cors', // no-cors, *cors, same-origin
-        cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
-        credentials: 'omit', // include, *same-origin, omit
+        method: 'GET', 
+        mode: 'cors', 
+        cache: 'default', 
+        credentials: 'omit', 
         headers: {
             'Content-Type': 'application/json'
-            // 'Content-Type': 'application/x-www-form-urlencoded',
         },
         };
 
+        // Fetching all models for a brand
         fetch(apiCall, options)
                 .then(response => {
                     if (response.status !== 200) {
@@ -343,39 +356,32 @@ table.blueTable tfoot .links a{
                         container2.appendChild(tr);
                         return;
                     }
-                // valid response will have json data
                 response.json().then(data => {
-                    // Country data
+                    // Populating sidebar with models
                     for (const row of data["Results"]) {
-                        // tr for each row
                         const tr = document.createElement("tr");
-                        // td for each column
                         const makeID = document.createElement("td");
                         const makeName = document.createElement("td");
                         const modelID = document.createElement("td");
                         const modelName = document.createElement("td");
 
-                        // data is specific to the API
                         makeID.innerHTML = row["Make_ID"];
                         makeName.innerHTML = row["Make_Name"]; 
                         modelID.innerHTML = row["Model_ID"]; 
                         modelName.innerHTML = row["Model_Name"]; 
 
 
-                        // this build td's into tr
                         tr.appendChild(makeID);
                         tr.appendChild(makeName);
                         tr.appendChild(modelID);
                         tr.appendChild(modelName);
                     
 
-                        // add HTML to container
                         container2.appendChild(tr);
                     }
                 })
             })
             
-            // catch fetch errors (ie ACCESS to server blocked)
             .catch(err => {
                 console.error(err);
                 const tr = document.createElement("tr");
@@ -400,6 +406,7 @@ table.blueTable tfoot .links a{
     resultContainer.appendChild(tr);
     }
     
+    // Function to close the sidebar 
     function closeNav() {
         document.getElementById("mySidenav").style.width = "0";
         document.getElementById("main").style.marginLeft= "0";
@@ -407,6 +414,7 @@ table.blueTable tfoot .links a{
     }
 
 
+    // Testing functionality for a ctrl-f type feature
     var last = "";
 
     function Find() {
@@ -435,6 +443,7 @@ table.blueTable tfoot .links a{
     }
 
 
+    // Another test for ctrl-f type feature
 
     function liveSearch() {
       // Locate the card elements
@@ -456,6 +465,26 @@ table.blueTable tfoot .links a{
           cards[i].style.display = "none";
         }
       }
+    }
+
+
+    // Go back to top 
+
+    let mybutton = document.getElementById("myBtn");
+
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
     }
 
 </script>
