@@ -57,7 +57,7 @@ permalink: /rangeCalc/
             mpg = parseInt(document.getElementById("horsepowerField").value);
             tankSize =  parseInt(document.getElementById("weightField").value);
 
-            var range = horsepower * 1.0 / weight;
+            var range = mpg * tankSize;
             const resultContainer = document.getElementById("result");
             const tableContainer = document.getElementById("table");
             resultContainer.innerHTML = "Your car's power to weight ratio is " + ratio + " horsepower per pound. ";
