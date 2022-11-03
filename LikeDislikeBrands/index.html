@@ -264,14 +264,14 @@ table.blueTable tfoot .links a{
     const container2 = document.getElementById("demo");
 
     // keys for brand like and dislike
-    const HAHA = "like";
-    const BOOHOO = "dislike";
+    const LIKE_KEY = "like";
+    const DISLIKE_KEY = "dislike";
 
     // prepare fetch urls and API calls
     const url = "https://" + "breadbops.gq" + "/api/topBrands";
     const get_url = url +"/";
-    const like_url = url + "/like/";  // haha reaction
-    const jeer_url = url + "/dislike/";  // boohoo reaction
+    const like_url = url + "/like/";  // like reaction
+    const dislike_url = url + "/dislike/";  // dislike reaction
 
     // prepare fetch GET options
     const options = {
@@ -304,24 +304,24 @@ table.blueTable tfoot .links a{
                 brand.innerHTML = row.id + ". " + row.brand;  
 
             // td for like cell 
-            const haha = document.createElement("td");
-                const haha_but = document.createElement('button');
-                haha_but.id = HAHA+row.id   
-                haha_but.innerHTML = row.like;  
-                haha_but.onclick = function () {
-                reaction(HAHA, like_url+row.id, haha_but.id);  
+            const like = document.createElement("td");
+                const like_but = document.createElement('button');
+                like_but.id = LIKE_KEY+row.id   
+                like_but.innerHTML = row.like;  
+                like_but.onclick = function () {
+                reaction(LIKE_KEY, like_url+row.id, like_but.id);  
                 };
-                haha.appendChild(haha_but); 
+                like.appendChild(like_but); 
 
             // td for dislike cell 
-            const boohoo = document.createElement("td");
-                const boohoo_but = document.createElement('button');
-                boohoo_but.id = BOOHOO+row.id  
-                boohoo_but.innerHTML = row.dislike;  
-                boohoo_but.onclick = function () {
-                reaction(BOOHOO, jeer_url+row.id, boohoo_but.id);  
+            const dislike = document.createElement("td");
+                const dislike_but = document.createElement('button');
+                dislike_but.id = DISLIKE_KEY+row.id  
+                dislike_but.innerHTML = row.dislike;  
+                dislike_but.onclick = function () {
+                reaction(DISLIKE_KEY, dislike_url+row.id, dislike_but.id);  
                 };
-                boohoo.appendChild(boohoo_but);  
+                dislike.appendChild(dislike_but);  
             
             const findCars = document.createElement("td");
                 const findCars_but = document.createElement('button');
@@ -332,8 +332,8 @@ table.blueTable tfoot .links a{
 
             // this builds ALL td's (cells) into tr (row) element
             tr.appendChild(brand);
-            tr.appendChild(haha);
-            tr.appendChild(boohoo);
+            tr.appendChild(like);
+            tr.appendChild(dislike);
             tr.appendChild(findCars);
             
             tr.className = "dataRow";
@@ -359,9 +359,9 @@ table.blueTable tfoot .links a{
         }
         response.json().then(data => {
             console.log(data);
-            if (type === HAHA) 
+            if (type === LIKE_KEY) 
             document.getElementById(elemID).innerHTML = data.like;  
-            else if (type === BOOHOO) 
+            else if (type === DISLIKE_KEY) 
             document.getElementById(elemID).innerHTML = data.dislike; 
             else
             error("unknown type: " + type); 
