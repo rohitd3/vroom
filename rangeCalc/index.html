@@ -58,7 +58,6 @@ li a:hover:not(.active) {
 </html>
 
 <!DOCTYPE HTML>
-<!DOCTYPE HTML>
 
 <head>
   <title>Car Range Calculator</title>
@@ -111,6 +110,7 @@ li a:hover:not(.active) {
             tankSize =  parseInt(document.getElementById("tankField").value);
 
             var range = mpg * tankSize;
+            console.log(range);
             const resultContainer = document.getElementById("result");
             const tableContainer = document.getElementById("table");
             resultContainer.innerHTML = "Your car's power to weight ratio is " + ratio + " horsepower per pound. ";
