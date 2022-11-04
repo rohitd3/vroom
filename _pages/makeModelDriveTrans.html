@@ -42,7 +42,7 @@ permalink: /TandD/
         <table>
             <tr>
                 <th>Model</th>
-                <th>Cylinders</th>
+                <th>Highway MPG</th>
                 <th>Drivetrain</th>
             </tr>
             <tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr>
@@ -68,14 +68,14 @@ permalink: /TandD/
                 var newDataModel = document.createElement("td"); 
                 newDataModel.innerHTML = response[i].model;
 
-                var newDataCylinders = document.createElement("td");
-                newDataCylinders.innerHTML = response[i].cylinders;
+                var newDataMPG = document.createElement("td");
+                newDataMPG.innerHTML = response[i].max_hwy_mpg;
 
                 var newDataDrive = document.createElement("td");
                 newDataDrive.innerHTML = response[i].drive;
 
                 $(".data-row").eq(i).append(newDataModel)
-                $(".data-row").eq(i).append(newDataCylinders)
+                $(".data-row").eq(i).append(newDataMPG)
                 $(".data-row").eq(i).append(newDataDrive)
 
                 
