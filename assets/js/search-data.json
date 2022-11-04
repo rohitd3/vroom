@@ -94,6 +94,17 @@
 
   
       ,"page6": {
+          "title": "Electric Cars",
+          "content": ". City MPG Make Model . . . . . . . .",
+          "url": "https://rohitd3.github.io/vroom/electric/",
+          "relUrl": "/electric/",
+          "date": ""
+      }
+      
+  
+
+  
+      ,"page7": {
           "title": "Honda",
           "content": ". Car Brand Image Source . . . . . . . .",
           "url": "https://rohitd3.github.io/vroom/honda/",
@@ -104,7 +115,7 @@
   
 
   
-      ,"page7": {
+      ,"page8": {
           "title": "",
           "content": "Vroom! Find your next car here!! . .",
           "url": "https://rohitd3.github.io/vroom/",
@@ -115,7 +126,7 @@
   
 
   
-      ,"page8": {
+      ,"page9": {
           "title": "Kia",
           "content": ". Car Brand Image Source . . . . . . . .",
           "url": "https://rohitd3.github.io/vroom/kia/",
@@ -126,7 +137,7 @@
   
 
   
-      ,"page9": {
+      ,"page10": {
           "title": "",
           "content": "&lt;!DOCTYPE HTML&gt; &lt;!DOCTYPE HTML&gt; . Power to Weight Calculator . Power to Weight ratio . Enter Horsepower of Vehicle Enter Weight of Vehicle Calculate! . Car Power to Weight . &lt;/html&gt; .",
           "url": "https://rohitd3.github.io/vroom/powerToWeightCalc/",
@@ -137,7 +148,7 @@
   
 
   
-      ,"page10": {
+      ,"page11": {
           "title": "",
           "content": "&lt;!DOCTYPE HTML&gt; . Car Range Calculator . Range Calculator . Enter MPG(Miles per Gallon) Enter Fuel Tank Max Capacity Calculate! . Car Range . &lt;/html&gt; .",
           "url": "https://rohitd3.github.io/vroom/rangeCalc/",
@@ -158,7 +169,7 @@
   
 
   
-      ,"page15": {
+      ,"page16": {
           "title": "Toyota",
           "content": ". Car Brand Image Source . . . . . . . .",
           "url": "https://rohitd3.github.io/vroom/toyota/",
@@ -178,7 +189,7 @@
   
 
   
-      ,"page19": {
+      ,"page20": {
           "title": "",
           "content": "Sitemap: {{ “sitemap.xml” | absolute_url }} | .",
           "url": "https://rohitd3.github.io/vroom/robots.txt",
