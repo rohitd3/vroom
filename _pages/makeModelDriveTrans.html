@@ -1,0 +1,93 @@
+---
+layout: nav
+title: Car Trans and Drivetrain
+permalink: /TandD/
+---
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    </head>
+    <style>
+        table {
+            border-collapse: collapse;
+            margin: auto;
+            background-color: white;    
+        }
+        th {
+            background-color: black;
+            color: white;
+            padding: 10px;
+        }
+        td {
+            padding: 10px;
+            color: white;
+            font-weight: bold;
+            font-size: x-large;
+            
+        }
+        td:nth-child(odd) {
+            background-color: rgb(113, 26, 26);
+        }
+        td:nth-child(even) {
+            background-color: rgb(113, 26, 26);
+        }
+        tr:nth-child(odd) {
+            background-color: rgb(113, 26, 26) !important;
+        }
+        tr:nth-child(even) {
+            background-color: black !important;
+        }
+    </style>
+    <body>
+        <table>
+            <tr>
+                <th>Model</th>
+                <th>Transmission</th>
+                <th>Drivetrain</th>
+                <!-- <th>Year</th> -->
+            </tr>
+            <tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr>
+            <tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr>
+        </table>
+        <script>
+
+        const settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?fuel_type=electricity",
+            "method": "GET",
+            "headers": {
+                "X-RapidAPI-Key": "bf09b94566msh22c602dfe97bd97p19c2fajsn1d42e34f8724",
+                "X-RapidAPI-Host": "cars-by-api-ninjas.p.rapidapi.com"
+            }
+        };
+
+        // ajax lets us to load the data without needing to reload the page
+        $.ajax(settings).done(function (response) {
+            console.log(response); // main method that requests the data from the server
+            for (var i = 0; i < response.length; i++) { // having i < response.length lets me display all
+                                                        // the data but it depends on how much table space I have
+
+                var newDataModel = document.createElement("td"); // where the data will be shown in the data
+                newDataMPG.innerHTML = response[i].model;
+
+                var newDataTrans = document.createElement("td");
+                newDataMake.innerHTML = response[i].transmission;
+
+                var newDataDrive = document.createElement("td");
+                newDataModel.innerHTML = response[i].drive;
+
+                // var newDataYear = document.createElement("td");
+                // newDataYear.innerHTML = response[i].year;
+
+                $(".data-row").eq(i).append(newDataModel)
+                $(".data-row").eq(i).append(newDataTrans)
+                $(".data-row").eq(i).append(newDataDrive)
+                // $(".data-row").eq(i).append(newDataYear)
+                
+            }
+            }
+        );
+        </script>
+    </body>
+</html>
