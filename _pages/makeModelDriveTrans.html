@@ -44,7 +44,6 @@ permalink: /TandD/
                 <th>Model</th>
                 <th>Transmission</th>
                 <th>Drivetrain</th>
-                <!-- <th>Year</th> -->
             </tr>
             <tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr>
             <tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr>
@@ -62,28 +61,23 @@ permalink: /TandD/
             }
         };
 
-        // ajax lets us to load the data without needing to reload the page
         $.ajax(settings).done(function (response) {
-            console.log(response); // main method that requests the data from the server
-            for (var i = 0; i < response.length; i++) { // having i < response.length lets me display all
-                                                        // the data but it depends on how much table space I have
+            console.log(response);
+            for (var i = 0; i < response.length; i++) { 
 
-                var newDataModel = document.createElement("td"); // where the data will be shown in the data
-                newDataMPG.innerHTML = response[i].model;
+                var newDataModel = document.createElement("td"); 
+                newDataModel.innerHTML = response[i].model;
 
                 var newDataTrans = document.createElement("td");
-                newDataMake.innerHTML = response[i].transmission;
+                newDataTrans.innerHTML = response[i].transmission;
 
                 var newDataDrive = document.createElement("td");
-                newDataModel.innerHTML = response[i].drive;
-
-                // var newDataYear = document.createElement("td");
-                // newDataYear.innerHTML = response[i].year;
+                newDataDrive.innerHTML = response[i].drive;
 
                 $(".data-row").eq(i).append(newDataModel)
                 $(".data-row").eq(i).append(newDataTrans)
                 $(".data-row").eq(i).append(newDataDrive)
-                // $(".data-row").eq(i).append(newDataYear)
+
                 
             }
             }
