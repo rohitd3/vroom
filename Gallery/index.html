@@ -88,8 +88,9 @@ li a:hover:not(.active) {
   
   /* The expanding image container (positioning is needed to position the close button and the text) */
   .container {
-    position: sticky;
-    top: 0px ;
+    position: absolute;
+    top: 12px ;
+    right:16px;
     display: none;
   }
   
@@ -132,7 +133,7 @@ li a:hover:not(.active) {
   </div>
   
   <!-- The expanding image container -->
-  <div class="container" style ="float: right">
+  <div class="container">
     <!-- Close the image -->
     <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
   
