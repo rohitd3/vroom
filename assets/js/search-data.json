@@ -94,6 +94,17 @@
 
   
       ,"page6": {
+          "title": "Honda",
+          "content": ". Car Brand Image Source . . . . . . . .",
+          "url": "https://rohitd3.github.io/vroom/honda/",
+          "relUrl": "/honda/",
+          "date": ""
+      }
+      
+  
+
+  
+      ,"page7": {
           "title": "",
           "content": "Vroom! Find your next car here!! . .",
           "url": "https://rohitd3.github.io/vroom/",
@@ -104,7 +115,7 @@
   
 
   
-      ,"page7": {
+      ,"page8": {
           "title": "",
           "content": "&lt;!DOCTYPE HTML&gt; &lt;!DOCTYPE HTML&gt; . Power to Weight Calculator . Power to Weight ratio . Enter Horsepower of Vehicle Enter Weight of Vehicle Calculate! . Car Power to Weight . &lt;/html&gt; .",
           "url": "https://rohitd3.github.io/vroom/powerToWeightCalc/",
@@ -115,7 +126,7 @@
   
 
   
-      ,"page8": {
+      ,"page9": {
           "title": "",
           "content": "&lt;!DOCTYPE HTML&gt; . Car Range Calculator . Range Calculator . Enter MPG(Miles per Gallon) Enter Fuel Tank Max Capacity Calculate! . Car Range . &lt;/html&gt; .",
           "url": "https://rohitd3.github.io/vroom/rangeCalc/",
@@ -136,7 +147,7 @@
   
 
   
-      ,"page13": {
+      ,"page14": {
           "title": "Toyota",
           "content": ". Car Brand Image Source . . . . . . . .",
           "url": "https://rohitd3.github.io/vroom/toyota/",
@@ -156,7 +167,7 @@
   
 
   
-      ,"page17": {
+      ,"page18": {
           "title": "",
           "content": "Sitemap: {{ “sitemap.xml” | absolute_url }} | .",
           "url": "https://rohitd3.github.io/vroom/robots.txt",
