@@ -1,6 +1,6 @@
 ---
 layout: nav
-title: Car Trans and Drivetrain
+title: Car Cylinders and Drivetrain
 permalink: /TandD/
 ---
 <html>
@@ -42,7 +42,7 @@ permalink: /TandD/
         <table>
             <tr>
                 <th>Model</th>
-                <th>Transmission</th>
+                <th>Cylinders</th>
                 <th>Drivetrain</th>
             </tr>
             <tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr>
@@ -68,14 +68,14 @@ permalink: /TandD/
                 var newDataModel = document.createElement("td"); 
                 newDataModel.innerHTML = response[i].model;
 
-                var newDataTrans = document.createElement("td");
-                newDataTrans.innerHTML = response[i].transmission;
+                var newDataCylinders = document.createElement("td");
+                newDataCylinders.innerHTML = response[i].cylinders;
 
                 var newDataDrive = document.createElement("td");
                 newDataDrive.innerHTML = response[i].drive;
 
                 $(".data-row").eq(i).append(newDataModel)
-                $(".data-row").eq(i).append(newDataTrans)
+                $(".data-row").eq(i).append(newDataCylinders)
                 $(".data-row").eq(i).append(newDataDrive)
 
                 
