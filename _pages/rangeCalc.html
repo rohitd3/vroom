@@ -80,7 +80,7 @@ permalink: /rangeCalc/
             }
         }
 
-        var range = mpg * tank;
+        var range = mpg + 1.0 * tank;
         const resultContainer = document.getElementById("result");
         const tableContainer = document.getElementById("table");
         resultContainer.innerHTML = "Your car's range is " + range + " miles. ";
