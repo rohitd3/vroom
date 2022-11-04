@@ -136,6 +136,14 @@
   
 
   
+      ,"page13": {
+          "title": "Toyota",
+          "content": ". Car Brand Image Source . . . . . . . .",
+          "url": "https://rohitd3.github.io/vroom/toyota/",
+          "relUrl": "/toyota/",
+          "date": ""
+      }
+      
   
 
   
@@ -145,7 +153,10 @@
   
 
   
-      ,"page16": {
+  
+
+  
+      ,"page17": {
           "title": "",
           "content": "Sitemap: {{ “sitemap.xml” | absolute_url }} | .",
           "url": "https://rohitd3.github.io/vroom/robots.txt",
