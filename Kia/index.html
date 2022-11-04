@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+body {
+  background: linear-gradient(to right, #9b9191, #af4f4f);
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgb(119, 3, 3);
+}
+
+li {
+  float: left;
+  border-right:1px solid #bbb;
+}
+
+li:last-child {
+  border-right: none;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: rgb(255, 0, 0);
+}
+
+.active {
+  background-color: #4000a7;
+}
+</style>
+</head>
+<body>
+
+<ul>
+  <li><a href="https://rohitd3.github.io/vroom/">Home</a></li>
+  <li><a href="https://rohitd3.github.io/vroom/FindModelFromBrand/">Find a Model</a></li>
+  <li><a href="https://rohitd3.github.io/vroom/LikeDislikeBrands/">Popular Brands</a></li>
+  <li><a href="https://rohitd3.github.io/vroom/powerToWeightCalc/">Power to Weight Calculator</a></li>
+  <li><a href="https://rohitd3.github.io/vroom/Gallery/">Photo Gallery</a></li>
+  <li><a href="https://rohitd3.github.io/vroom/carDealerships/">Find a Dealership</a></li>
+  <li><a href="https://rohitd3.github.io/vroom/honda/">Honda Models</a></li>
+  <li><a href="https://rohitd3.github.io/vroom/toyota">Toyota Models</a></li>
+  <li style="float:right"><a href="https://rohitd3.github.io/vroom/about/">About</a></li>
+</ul>
+
+</body>
+</html>
+
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    </head>
+    <style>
+        table {
+            border-collapse: collapse;
+            margin: auto;
+            background-color: white;    
+        }
+        th {
+            background-color: black;
+            color: white;
+            padding: 10px;
+        }
+        td {
+            padding: 10px;
+            color: white;
+            font-weight: bold;
+            font-size: x-large;
+            
+        }
+        td:nth-child(odd) {
+            background-color: rgb(113, 26, 26);
+        }
+        td:nth-child(even) {
+            background-color: white;
+        }
+        tr:nth-child(odd) {
+            background-color: rgb(113, 26, 26) !important;
+        }
+        tr:nth-child(even) {
+            background-color: black !important;
+        }
+    </style>
+    <body>
+        <table>
+            <tr>
+                <th>Car Brand</th>
+                <th>Image</th>
+                <th>Source</th>
+            </tr>
+            <tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr>
+            <tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr>
+        </table>
+        <script>
+
+        const settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "https://all-cars.p.rapidapi.com/cars/kia",
+            "method": "GET",
+            "headers": {
+                "X-RapidAPI-Key": "bf09b94566msh22c602dfe97bd97p19c2fajsn1d42e34f8724",
+                "X-RapidAPI-Host": "all-cars.p.rapidapi.com"
+            }
+        }; 
+
+        // ajax lets us to load the data without needing to reload the page
+        $.ajax(settings).done(function (response) {
+            console.log(response); // main method that requests the data from the server
+            for (var i = 0; i < response.length; i++) { // having i < response.length lets me display all
+                                                        // the data but it depends on how much table space I have
+                // var img = document.createElement('img');
+
+
+                var newDataTitle = document.createElement("td"); // where the data will be shown in the data
+                newDataTitle.innerHTML = response[i].title;
+
+                var img = document.createElement('img');
+                img.src = response[i].img;
+                var newDataSource = document.createElement("td");
+                newDataSource.innerHTML = response[i].img;
+
+                $(".data-row").eq(i).append(newDataTitle)
+                $(".data-row").eq(i).append(img)
+                $(".data-row").eq(i).append(newDataSource)
+            }
+            }
+        );
+        </script>
+    </body>
+</html>
+
+
+
