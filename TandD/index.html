@@ -100,7 +100,7 @@ li a:hover:not(.active) {
         <table>
             <tr>
                 <th>Model</th>
-                <th>Transmission</th>
+                <th>Cylinders</th>
                 <th>Drivetrain</th>
             </tr>
             <tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr><tr class = "data-row"></tr>
@@ -126,14 +126,14 @@ li a:hover:not(.active) {
                 var newDataModel = document.createElement("td"); 
                 newDataModel.innerHTML = response[i].model;
 
-                var newDataTrans = document.createElement("td");
-                newDataTrans.innerHTML = response[i].transmission;
+                var newDataCylinders = document.createElement("td");
+                newDataCylinders.innerHTML = response[i].cylinders;
 
                 var newDataDrive = document.createElement("td");
                 newDataDrive.innerHTML = response[i].drive;
 
                 $(".data-row").eq(i).append(newDataModel)
-                $(".data-row").eq(i).append(newDataTrans)
+                $(".data-row").eq(i).append(newDataCylinders)
                 $(".data-row").eq(i).append(newDataDrive)
 
                 
